@@ -7,13 +7,17 @@ Submit the solution to this part as `part1.md`.
 1. Explain in simple words the following programming paradigms:
    1. [5 points] Imperative
    Answer: A program is written as a sequence of commands that tell the computer exactly what to do step by step. The state of the program changes as each command runs.
-   1. [5 points] Object Oriented
+   2. [5 points] Object Oriented
    Answer: A program is built from objects that contain data and functions (methods). These objects interact with each other, and each object is responsible for its own behavior.
-   1. [5 points] Functional
-   Answer: A program is built by expressions (Also the functions). Instead of changing data step by step, we compute results by applying functions to values.
-1. [5 points] How does the object oriented paradigm improve over the imperative paradigm?
+   3. [5 points] Functional
+   Answer: A program is built by expressions and functions. Instead of changing data step by step, we compute results by applying functions to values.
+
+2. [5 points] How does the object oriented paradigm improve over the imperative paradigm?
+
 Answer: Object oriented programming improves over imperative programming by organizing code into objects, which makes large programs easier to structure, reuse, and maintain. It reduces repetition by allowing us to define classes and reuse them for many similar cases. It also makes the code easier to understand because data and the operations on that data are grouped together.
-1. [5 points] How does the functional paradigm improve over the object oriented paradigm?
+
+3. [5 points] How does the functional paradigm improve over the object oriented paradigm?
+
 Answer: Functional programming improves over object oriented programming by encouraging simpler code. Functions usually do one clear task, and we avoid changing shared state, so the code is easier to test, verify, and optimize. This style also works well with asynchronous computations.
 
 ### [10 points] Question 1.2
@@ -63,7 +67,7 @@ type Product = {
   discounted: boolean;
 };
 
-const getDiscountedProductAveragePrice = (inventory: Product[]): number => {
+const getDiscountedProductAveragePriceFP = (inventory: Product[]): number => {
   const discountedPrices = inventory.filter(product => product.discounted).map(product => product.price);
   return discountedPrices.length === 0 ? 0 : discountedPrices.reduce((sum, price) => sum + price, 0) / discountedPrices.length;
 };
